@@ -1,5 +1,5 @@
 from DBHandler import *
-
+#Funções para manipulação do banco de dados
 def create_table(coluna,tipo):
     mydb = DBHandler.get_mydb()
     cursor = mydb.cursor()
