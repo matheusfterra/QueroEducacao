@@ -2,7 +2,7 @@
 
 Cargo: Engenheiro de Dados.
 
-Case Técnico: Exportação, transformação e carregamento desses dados em um banco de dados.
+Case Técnico: Exportação, transformação e carregamento de dados em um banco de dados.
 
 ## Processo Seletivo
 
@@ -15,16 +15,14 @@ adequação dos dados.
 É criado de forma automática uma tabela no banco de dados com as mesmas colunas importadas pela API. 
 Como banco de dados, utilizou-se o MySQL.
 
-Os dados são inseridos no BD e em seguida é realizao uma exportação automática desse BD em um arquivo
+Os dados são inseridos no BD e em seguida é realizado uma exportação automática desse BD em um arquivo
 SQL.
 
 ## Dataset
 
-Como dataset, é realizado uma extração por meio da [API](http://dataeng.quero.com:5000/caged-data)
+Como dataset, é realizado uma extração por meio da [API](http://dataeng.quero.com:5000/caged-data).
 
-É criado um arquivo .CSV que é utilziado como dataset pelo script e encontra-se na pasta [dataset](https://github.com/matheusfterra/QueroEducacao/blob/master/dataset/EmployData.csv).
-
-O próprio Notebook, ao ser executado, exporta um novo dataset, o qual é utilizado para criação do Dashboard, pelo Power BI.
+É criado um arquivo .CSV que é utilizado como dataset pelo script e encontra-se na pasta [dataset](https://github.com/matheusfterra/QueroEducacao/blob/master/dataset/EmployData.csv).
 
 
 ## Execução
@@ -42,8 +40,8 @@ do banco de dados MySQL e em seguida executar o script [my_script.py](my_script.
 
 ## Banco de Dados
 
-Após a execução do script principal, é criado uma pasta com o horário atual da máquina, e dentro
-haverá um arquivo .SQL, com todos os valores retirados da API.
+Após a execução do script principal, dentro da pasta db, é criado uma pasta com o horário atual da máquina, e dentro
+haverá um arquivo .SQL, com todos os valores salvos do banco de dados, que por sua vez foi retirados da API.
 
 ![alt text](images/dados.PNG)
 
