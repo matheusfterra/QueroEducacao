@@ -5,6 +5,5 @@ pyvenv.cfg
 /[Ee]tc/
 /[Ss]hare/
 /.idea/
-/[Ii]mages/
 homeSecurity.py
 /DOC's/
