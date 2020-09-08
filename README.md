@@ -31,19 +31,21 @@ O próprio Notebook, ao ser executado, exporta um novo dataset, o qual é utiliz
 
 O Notebook pode ser executado pelo repositório, ou pelo Notebook online Google Colab
 
-[DataExtractor.ipynb](/B4Bank.ipynb)
+[DataExtractor.ipynb](DataExtractor.ipynb)
 
 ou
 
 [Notebook Online](https://colab.research.google.com/drive/1K-L0ad9kbSJh2aEi-WKNJGwmVbZpruBd?usp=sharing)
 
-Após criação do arquivo CSV (e alocação para a pasta dataset), deve-se alterar o arquivo [settings.json](https://colab.research.google.com/drive/1K-L0ad9kbSJh2aEi-WKNJGwmVbZpruBd?usp=sharing), com os parâmentros
-do banco de dados MySQL e em seguida executar o script [my_script.py](https://github.com/matheusfterra/QueroEducacao/blob/master/my_script.py)
+Após criação do arquivo CSV (e alocação para a pasta dataset), deve-se alterar o arquivo [settings.json](settings.json), com os parâmentros
+do banco de dados MySQL e em seguida executar o script [my_script.py](my_script.py)
 
 ## Banco de Dados
 
 Após a execução do script principal, é criado uma pasta com o horário atual da máquina, e dentro
 haverá um arquivo .SQL, com todos os valores retirados da API.
+
+![alt text](images/dados.PNG)
 
 ## Autor
 
