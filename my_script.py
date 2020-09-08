@@ -2,8 +2,8 @@ import json
 import urllib.request as urllib2
 import time
 import pandas as pd
-
 import DBExecute
+from DBBackup import *
 
 df = pd.DataFrame()
 
@@ -13,13 +13,7 @@ class GetData:
         print("Software Inicializado!\n")
 
     @staticmethod
-    def get_api():
-        # result = requests.get('http://dataeng.quero.com:5000/caged-data')
-        # status_request = result.status_code
-        # tamanho=result.headers['content-length']
-        # #my_data = result.json()
-        # print(tamanho)
-
+    def show_data():
         url = 'http://dataeng.quero.com:5000/caged-data'
         json_obj = urllib2.urlopen(url)
 
@@ -30,7 +24,7 @@ class GetData:
     def get_dataframe():
         global df
         df = pd.read_csv('dataset/EmployData.csv')
-        df['salario'] = df['salario'].str.replace(',','')
+        df['salario'] = df['salario'].str.replace(',', '')
         df['salario'] = df['salario'].astype('float')
 
     @staticmethod
@@ -59,21 +53,23 @@ class GetData:
 
     @staticmethod
     def insert_data():
-        print("Os dados do dataset serão inseridos no Banco de Dados({} linhas).\n\nEste processo pode demorar alguns minutos!\n".format(len(df)))
-        # for i in range(0,len(df)):
-        #     data_send=[]
-        #     for j in range(0,len(df.dtypes)):
-        #         data_send.append(df.iloc[i][j])
-        # print(data_send)
-        title = df.columns
-        for i in range(0,len(df)):
-            data_send=[]
-            data_send.append(df.iloc[i])
-            DBExecute.insert_data(title, data_send[0])
-            time.sleep(0.003)
+        print(
+            "Os dados do dataset serão inseridos no Banco de Dados ({} linhas).\n\nEste processo pode demorar alguns "
+            "minutos! (Aproximadamente, 4min)\n".format(
+                len(df)))
 
+        title = df.columns
+        for i in range(0, len(df)):
+            data_send = [df.iloc[i]]
+            DBExecute.insert_data(title, data_send[0])
+            time.sleep(0.01)
 
         print("Inserção no Banco de Dados concluída com Sucesso!")
+
+    @staticmethod
+    def export_db():
+        print("\nExportando Banco de Dados")
+        backup()
 
 
 if __name__ == '__main__':
@@ -82,4 +78,5 @@ if __name__ == '__main__':
     column_name = mydata.get_column_dataframe()
     type_data = mydata.get_type_data()
     mydata.create_table(column_name, type_data)
-    mydata.insert_data()
+    # mydata.insert_data()
+    # mydata.export_db()

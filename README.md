@@ -1,32 +1,49 @@
-# Relatório B4 Bank
+# Case Técnico - Quero Educação
 
-Análise de dados e predição via Machine Learning
+Cargo: Engenheiro de Dados.
 
-## Processo Seletivo RankMyAPP
+Case Técnico: Exportação, transformação e carregamento desses dados em um banco de dados.
 
-Software foi desenvolvido para auxílio na tomada de decisões e Insight's, acerca do desempenho do app da financeira B4 Bank.
+## Processo Seletivo
 
-Foi desenvolvido um [Relatório em formato PDF](https://ifgoias-my.sharepoint.com/:b:/g/personal/matheus_terra_academico_ifg_edu_br/Eac3v2tlmi1IuusADSLF1aUBjFUhOWKm6fZDZ_Y_nZTQIw?e=tt5HgY), explicando o funcionamento do software, assim como apresentando Insight's e ideias para otimização de negócios.
+Foi desenvolvido um script em formato Notebook para extração dos dados disponibilizados pela API.
+Os dados são então exportados para tratamento e manipulação e em seguinda inserção no banco de dados.
 
-Foi criado, também, um Dashboard em Power BI para realização da apresentação do conteúdo desenvolvido pelo software. O Dashboard pode ser encontrado aqui no repositório, na pasta Dashboard, ou pode ser visualizado online, [clicando aqui](https://app.powerbi.com/view?r=eyJrIjoiZDAzZTc5ZjgtNDM2Mi00NmE4LWJmNjgtMDJhOTJkZTAzZTYwIiwidCI6IjIyNjRkOGM2LWNlMTQtNDBkMS1iMGQ5LTMyYTEzZWM2NmI1OSJ9&pageName=ReportSection90d0a2badfaddb304c27)!
+O Script do programa principal foi desenvolvido em Python. Faz-se a importação do dataset CSV e em seguida há uma manipulação para
+adequação dos dados.
 
+É criado de forma automática uma tabela no banco de dados com as mesmas colunas importadas pela API. 
+Como banco de dados, utilizou-se o MySQL.
+
+Os dados são inseridos no BD e em seguida é realizao uma exportação automática desse BD em um arquivo
+SQL.
 
 ## Dataset
 
-O dataset utilizado no Notebook B4Bank encontra-se na pasta [datasets](https://github.com/matheusfterra/B4Bank/blob/master/datasets/data_scientist_case.xlsx).
+Como dataset, é realizado uma extração por meio da [API](http://dataeng.quero.com:5000/caged-data)
+
+É criado um arquivo .CSV que é utilziado como dataset pelo script e encontra-se na pasta [dataset](https://github.com/matheusfterra/QueroEducacao/blob/master/dataset/EmployData.csv).
 
 O próprio Notebook, ao ser executado, exporta um novo dataset, o qual é utilizado para criação do Dashboard, pelo Power BI.
 
 
 ## Execução
 
-O Notebook pode ser executado pelo repostório, ou pelo Notebook online Google Colab
+O Notebook pode ser executado pelo repositório, ou pelo Notebook online Google Colab
 
-[B4Bank.ipynb](https://github.com/matheusfterra/B4Bank/blob/master/B4Bank.ipynb)
+[DataExtractor.ipynb](/B4Bank.ipynb)
 
 ou
 
-[Notebook Online](https://colab.research.google.com/drive/1jUwQw1OxdLj-66pHOX24_zVSlQETbEvw?usp=sharing)
+[Notebook Online](https://colab.research.google.com/drive/1K-L0ad9kbSJh2aEi-WKNJGwmVbZpruBd?usp=sharing)
+
+Após criação do arquivo CSV (e alocação para a pasta dataset), deve-se alterar o arquivo [settings.json](https://colab.research.google.com/drive/1K-L0ad9kbSJh2aEi-WKNJGwmVbZpruBd?usp=sharing), com os parâmentros
+do banco de dados MySQL e em seguida executar o script [my_script.py](https://github.com/matheusfterra/QueroEducacao/blob/master/my_script.py)
+
+## Banco de Dados
+
+Após a execução do script principal, é criado uma pasta com o horário atual da máquina, e dentro
+haverá um arquivo .SQL, com todos os valores retirados da API.
 
 ## Autor
 

@@ -2,7 +2,7 @@
   "db": {
     "host": "localhost",
     "user": "root",
-    "pass": "",
+    "pass": "1",
     "database": "quero_educacao"
   }
 }
